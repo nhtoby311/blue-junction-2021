@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Staatliches&display=swap');
+
+:root {
+    --font-main: 'Staatliches', cursive;
+    --font-sec: 'Inter', sans-serif;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Staatliches', cursive;
+}
+
+body{
+    background: #F2E0D5;
+}

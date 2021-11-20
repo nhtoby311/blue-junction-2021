@@ -1,0 +1,26 @@
+.container {
+    height: 100vh;
+    margin: 0 30px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 15px 15px; 
+    grid-template-areas: 
+      "monthly monthly monthly monthly Test Test"
+      "monthly monthly monthly monthly Test Test"
+      "monthly monthly monthly monthly Test Test"
+      "kitchen Bathroom Bathtub Restroom Test Test"
+      "kitchen Bathroom Bathtub Restroom cus1 cus1"
+      "article article cus2 cus2 cus1 cus1"
+      "article article cus2 cus2 cus1 cus1"
+      "article article cus2 cus2 cus1 cus1"; 
+  }
+  .monthly { grid-area: monthly; }
+  .Test { grid-area: Test; }
+  .kitchen { grid-area: kitchen; }
+  .Bathroom { grid-area: Bathroom; }
+  .Bathtub { grid-area: Bathtub; }
+  .Restroom { grid-area: Restroom; }
+  .cus1 { grid-area: cus1; }
+  .article { grid-area: article; }
+  .cus2 { grid-area: cus2; }

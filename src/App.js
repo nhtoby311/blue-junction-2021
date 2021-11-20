@@ -1,6 +1,8 @@
 import Home from './pages/Home';
 import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import Tutorial from './pages/Tutorial';
+import './styles/style.css'
+import Layout from './components/Layout/Layout';
 
 function App() {
   
@@ -14,7 +16,9 @@ function App() {
 
   return (
     <Router>
-      {routes}
+      <Layout>
+        {routes}
+      </Layout>
     </Router>
   )
 }

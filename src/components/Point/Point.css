@@ -1,0 +1,4 @@
+.active{
+    opacity: 1!important;
+    transition: opacity 0.6s;
+}
