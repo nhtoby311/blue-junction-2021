@@ -4,10 +4,17 @@ import video from '../assets/video.mp4'
 import video2 from '../assets/video2.mp4'
 import video3 from '../assets/video3.mp4'
 import video4 from '../assets/video4.mp4'
-import styled from 'styled-components';
+import video5 from '../assets/video5.mp4'
+import video6 from '../assets/video6.mp4'
+import video7 from '../assets/video7.mp4'
+import video8 from '../assets/video8.mp4'
+import video9 from '../assets/video9.mp4'
+import video10 from '../assets/video10.mp4'
 import Point from '../components/Point/Point';
 import Modal from '../components/Modal/Modal';
 
+
+//5 = use soap
 
 const questions = [
     {
@@ -15,7 +22,7 @@ const questions = [
         video: video,
         points:[
             {
-                nextVidId: 2,
+                nextVidId: 5,
                 description: "Use the soap" ,
                 pos:{
                     top:"17vw",
@@ -51,7 +58,7 @@ const questions = [
         video: video3,
         points:[
             {
-                nextVidId: 4,
+                nextVidId: 5,
                 description: "Use the soap" ,
                 pos:{
                     top:"17vw",
@@ -81,7 +88,7 @@ const questions = [
                 }
             },
             {
-                nextVidId: 5,
+                nextVidId: 2,
                 description: "Use the faucet",
                 pos:{
                     top:"20vw",
@@ -90,6 +97,131 @@ const questions = [
             }
         ]
     },
+    {
+        id:5,
+        video: video5,
+        points:[
+            {
+                nextVidId: 6,
+                description: "Rub the soap",
+                pos:{
+                    top:"40vw",
+                    left:"67vw", 
+                }
+            }
+        ]
+    },
+    {
+        id:6,
+        video: video6,
+        points:[
+            {
+                nextVidId: 5,
+                description: "Use the soap" ,
+                pos:{
+                    top:"17vw",
+                    left:"27vw", 
+                }
+            },
+            {
+                nextVidId: 7,
+                description: "Rub the soap",
+                pos:{
+                    top:"35vw",
+                    left:"67vw",  
+                }
+            }
+        ]
+    },
+    {
+        id:7,
+        video: video7,
+        points:[
+            {
+                nextVidId: 5,
+                description: "Use the soap" ,
+                pos:{
+                    top:"17vw",
+                    left:"27vw", 
+                }
+            },
+            {
+                nextVidId: 8,
+                description: "Rub the finger",
+                pos:{
+                    top:"35vw",
+                    left:"67vw",  
+                }
+            }
+        ]
+    },
+    {
+        id:8,
+        video: video8,
+        points:[
+            {
+                nextVidId: 5,
+                description: "Use the soap" ,
+                pos:{
+                    top:"17vw",
+                    left:"27vw", 
+                }
+            },
+            {
+                nextVidId: 9,
+                description: "Rub the finger",
+                pos:{
+                    top:"35vw",
+                    left:"67vw",  
+                }
+            }
+        ]
+    },
+    {
+        id:9,
+        video: video9,
+        points:[
+            {
+                nextVidId: 5,
+                description: "Use the soap" ,
+                pos:{
+                    top:"17vw",
+                    left:"27vw", 
+                }
+            },
+            {
+                nextVidId: 3,
+                description: "Use the faucet",
+                pos:{
+                    top:"20vw",
+                    left:"50vw", 
+                }
+            },
+            {
+                nextVidId: 10,
+                description: "Use the towel",
+                pos:{
+                    top:"30vw",
+                    left:"90vw", 
+                }
+            }
+        ]
+    },
+    {
+        id:10,
+        video: video10,
+        points:[
+            {
+                nextVidId: 11,
+                description: "Use the soap" ,
+                pos:{
+                    top:"17vw",
+                    left:"27vw", 
+                }
+            },
+        ]
+    },
+    
 ]
 
 
@@ -103,6 +235,10 @@ export default function Tutorial(){
     const videoPlayer = useRef(null)
 
 
+    useEffect(()=>{
+        console.log(videoIndex)
+    })
+
     const handleVideo = (e)=>{
         setPlaying(true)
         setActive(false)
@@ -111,7 +247,7 @@ export default function Tutorial(){
 
     const fetchVideo = ()=>{
         let res = ''
-        if (videoIndex < 5){
+        if (videoIndex < 11){
             res = questions.find((e)=>{
                 return e.id === videoIndex
             }).video
@@ -131,7 +267,7 @@ export default function Tutorial(){
 
     const fetchPoint = ()=>{
         let res = []
-        if (videoIndex < 5){
+        if (videoIndex < 11){
             res = questions.find((e)=>{
                 return e.id === videoIndex
             }).points
@@ -142,7 +278,7 @@ export default function Tutorial(){
         descrip = {e.description} 
         top={e.pos.top} left={e.pos.left} 
         func={()=>{
-            if (videoIndex < 4){
+            if (videoIndex < 10){
                 handleVideo(e.nextVidId)
             }
             else{

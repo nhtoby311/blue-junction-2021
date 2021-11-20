@@ -30,14 +30,13 @@ const BtnDivTest = styled.div`
 
 
 export default function Home(){
-    console.log(data)
+    //console.log(data.houses[0].apartments[7])
     return (
         <>
             <Spacer/>
             <div class="container">
                 <Block class="monthly" title="Monthly water consumption">
-                   <Chart/>
-
+                   <Chart data={data.houses[0].apartments[7]}/>
                 </Block>
                 <Block class="Test" title="Test your hand washing skills!">
                     <TestDiv>

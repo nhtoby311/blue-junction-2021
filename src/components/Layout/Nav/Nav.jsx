@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const Cont = styled.div`
@@ -9,13 +10,16 @@ const Cont = styled.div`
     width: 100vw;
     justify-content: space-between;
     background: linear-gradient(180deg, #F2E0D5 0%, rgba(242, 224, 213, 0) 92.27%);
+    z-index: 100;
 `
 
 export default function Nav(){
     return (
         <Cont>
             <div>menu</div>
-            <div>Logo</div>
+            <Link to="/">
+                <div>Logo</div>
+            </Link>
             <div></div>
         </Cont>
     )
