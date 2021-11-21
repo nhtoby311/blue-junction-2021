@@ -50,7 +50,7 @@ export default function Home(){
                         <Text>Show us how you regularly wash your hands, we’ll tell who you are. Get precious gifts by claiming your extra points!</Text>
                         <Img src={thumbnailTest} alt="" />
                         <BtnDivTest>
-                            <Button title="Maybe Later"></Button>
+                            <Button color ="#7A64F5" border bgcolor="transparent" title="Maybe Later"></Button>
                             <Link to='/tutorial'>
                                 <Button color="white" bgcolor="#7A64F5" title="Take the challenge"></Button>
                             </Link>
@@ -59,7 +59,7 @@ export default function Home(){
                 </Block>
                 <Block class="cus1" title="Check out the shop"></Block>
                 <Block class="article" title="Tips on how to save money"></Block>
-                <Block class="cus2" title="Currency exchange"></Block>
+                <Block class="cus2" title="Energy Fee"></Block>
             </div>
         </>
         )

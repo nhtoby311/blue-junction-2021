@@ -6,6 +6,7 @@ const Cont = styled.div`
     position: absolute;
     width : 35px;
     height: 35px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

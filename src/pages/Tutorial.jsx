@@ -12,6 +12,7 @@ import video9 from '../assets/video9.mp4'
 import video10 from '../assets/video10.mp4'
 import Point from '../components/Point/Point';
 import Modal from '../components/Modal/Modal';
+import styled from 'styled-components';
 
 
 //5 = use soap
@@ -20,6 +21,7 @@ const questions = [
     {
         id:1,
         video: video,
+        description: "What would be the next step?",
         points:[
             {
                 nextVidId: 5,
@@ -42,6 +44,7 @@ const questions = [
     {
         id:2,
         video: video2,
+        description: "What would you do next?",
         points:[
             {
                 nextVidId: 3,
@@ -56,6 +59,7 @@ const questions = [
     {
         id:3,
         video: video3,
+        description: "Come on, go ahead.",
         points:[
             {
                 nextVidId: 5,
@@ -78,6 +82,7 @@ const questions = [
     {
         id:4,
         video: video4,
+        description: "What would be the next step?",
         points:[
             {
                 nextVidId: 5,
@@ -100,6 +105,7 @@ const questions = [
     {
         id:5,
         video: video5,
+        description: "What would be the next step?",
         points:[
             {
                 nextVidId: 6,
@@ -114,6 +120,7 @@ const questions = [
     {
         id:6,
         video: video6,
+        description: "What would be the next step?",
         points:[
             {
                 nextVidId: 5,
@@ -136,6 +143,7 @@ const questions = [
     {
         id:7,
         video: video7,
+        description: "Come on, go ahead.",
         points:[
             {
                 nextVidId: 5,
@@ -158,6 +166,7 @@ const questions = [
     {
         id:8,
         video: video8,
+        description: "What are you gonna do now?",
         points:[
             {
                 nextVidId: 5,
@@ -180,6 +189,7 @@ const questions = [
     {
         id:9,
         video: video9,
+        description: "What would you do next?",
         points:[
             {
                 nextVidId: 5,
@@ -210,6 +220,7 @@ const questions = [
     {
         id:10,
         video: video10,
+        description: "Come on, go ahead.",
         points:[
             {
                 nextVidId: 11,
@@ -224,7 +235,18 @@ const questions = [
     
 ]
 
+const DesciptTxt = styled.h2`
+    position: absolute;
+    margin-top: 120px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #375CA6;
+`
 
+const Cont = styled.div`
+    display: flex;
+    justify-content: center;
+`
 
 
 export default function Tutorial(){
@@ -257,7 +279,6 @@ export default function Tutorial(){
 
     const handleActive = () => {
         if(active){
-            console.log('sds')
             return 'active'
         }
         else{
@@ -285,12 +306,25 @@ export default function Tutorial(){
                 setModal(true)
             }}}></Point>})
     }
+
+
+    const fetchDescrip = ()=>{
+        let res = []
+        if (videoIndex < 11){
+            res = questions.find((e)=>{
+                return e.id === videoIndex
+            }).description
+        }
+        
+        return <DesciptTxt className={handleActive()}>{res}</DesciptTxt>
+    }
     
 
     return (
-        <>
+        <Cont>
         {/* <Image src={img}/> */}
         
+        {fetchDescrip()}
         <ReactPlayer
             muted
             ref = {videoPlayer} 
@@ -305,6 +339,6 @@ export default function Tutorial(){
         {fetchPoint()}
 
         {modal === true ? (<Modal/>) : null}
-        </>
+        </Cont>
     );
 }

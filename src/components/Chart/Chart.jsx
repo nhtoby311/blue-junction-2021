@@ -97,13 +97,13 @@ export default function Chart(props){
                     <Line
                         type="monotone"
                         dataKey="HydractiveShower"
-                        stroke="#8884d8"
+                        stroke="#beb510"
                         activeDot={{ r: 8 }}
                     />
                     <Line
                         type="monotone"
                         dataKey="KitchenOptimaFacet"
-                        stroke="#8884d8"
+                        stroke="#bc5831"
                         activeDot={{ r: 8 }}
                     />
                     <Line type="monotone" dataKey="DishWasher" stroke="#82ca9d" />

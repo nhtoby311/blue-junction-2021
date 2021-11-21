@@ -30,10 +30,12 @@ const Box = styled.div`
 const Title = styled.h3`
     font-size: 25px;
     color: #375CA6;
+    
 `
 
 const Grade = styled.h3`
     font-size: 32px;
+    font-family: var(--font-sec);
 `
 
 const BtnCont = styled.div`
@@ -41,6 +43,7 @@ const BtnCont = styled.div`
     width: 100%;
     gap: 20px;
     justify-content: center;
+    align-items: center;
 `
 
 const Gif = styled.img`
@@ -52,14 +55,14 @@ export default function Modal(){
         <Done>
             <Box>
                 <Title>Congratulations for your result!</Title>
-                <Grade>200pts</Grade>
+                <Grade>+200pts</Grade>
                 <Gif src={gif}></Gif>
                 <BtnCont>
                     <Link style={{cursor:'pointer'}} to="/">
-                        <Button bgcolor="transparent" title="Read the article"></Button>
+                        <Button color="#7A64F5" border bgcolor="transparent" title="Read the article"></Button>
                     </Link>
                     <Link style={{cursor:'pointer'}} to="/">
-                        <Button bgcolor="#7A64F5" title="Claim the points"></Button>
+                        <Button color="white" bgcolor="#7A64F5" title="Claim the points"></Button>
                     </Link>
                 </BtnCont>
             </Box>
