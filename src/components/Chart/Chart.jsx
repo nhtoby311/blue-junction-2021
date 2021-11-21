@@ -18,7 +18,7 @@ const Cont = styled.div`
         font-family: var(--font-sec);
         font-size: 13px;
     }
-    padding: 10px;
+    padding: 15px;
 `
 
 function arrayOfMonth(arr){

@@ -7,6 +7,7 @@ const Cont = styled.div`
     background: white;
     flex-direction: column;
     border-radius: 8px;
+    box-shadow: 0px 0px 30px rgba(215, 176, 176, 0.19);
 `
 
 const TitleCont = styled.div`

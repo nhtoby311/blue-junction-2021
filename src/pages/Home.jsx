@@ -5,6 +5,7 @@ import Block from '../components/Block/Block'
 import Button from '../components/Button/Button'
 import { Link } from 'react-router-dom'
 import Chart from '../components/Chart/Chart'
+import thumbnailTest from '../assets/handwash-img.png'
 
 const Spacer = styled.div`
     height: 150px;
@@ -17,6 +18,7 @@ const TestDiv = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 15px;
+    gap: 25px;
 `
 const Text = styled.p`
     font-family: var(--font-sec);
@@ -28,6 +30,11 @@ const BtnDivTest = styled.div`
     justify-content: space-between;
 `
 
+const Img = styled.img`
+    height: 200px;
+    border-radius: 8px;
+`
+
 
 export default function Home(){
     //console.log(data.houses[0].apartments[7])
@@ -35,13 +42,13 @@ export default function Home(){
         <>
             <Spacer/>
             <div class="container">
-                <Block class="monthly" title="Monthly water consumption">
+                <Block class="monthly" title="Annually water consumption (L)">
                    <Chart data={data.houses[0].apartments[7]}/>
                 </Block>
                 <Block class="Test" title="Test your hand washing skills!">
                     <TestDiv>
                         <Text>Show us how you regularly wash your hands, we’ll tell who you are. Get precious gifts by claiming your extra points!</Text>
-                        <div></div>
+                        <Img src={thumbnailTest} alt="" />
                         <BtnDivTest>
                             <Button title="Maybe Later"></Button>
                             <Link to='/tutorial'>
@@ -50,13 +57,9 @@ export default function Home(){
                         </BtnDivTest>
                     </TestDiv>
                 </Block>
-                <div class="kitchen">a</div>
-                <div class="Bathroom">a</div>
-                <div class="Bathtub">a</div>
-                <div class="Restroom">a</div>
-                <div class="cus1">a</div>
-                <div class="article">a</div>
-                <div class="cus2">a</div>
+                <Block class="cus1" title="Check out the shop"></Block>
+                <Block class="article" title="Tips on how to save money"></Block>
+                <Block class="cus2" title="Currency exchange"></Block>
             </div>
         </>
         )
